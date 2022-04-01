@@ -1,0 +1,11 @@
+FONT la120
+FONTBOUNDINGBOX 7 8 0 -1
+BEGINPROPERTIES
+SPACING "m"
+FOUNDRY "dse"
+FAMILY_NAME "dec-la120"
+WEIGHT_NAME "medium"
+SLANT "r"
+ENDPROPERTIES
+INCLUDE la120.chars.txt
+# https://vt100.net/dec/la120ug4.pdf
