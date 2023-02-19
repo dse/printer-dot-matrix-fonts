@@ -1,10 +1,14 @@
 TARGETS = $(BDFS) $(TTFS)
 
-DEPS       = src/la120.chars.txt
+DEPS       = src/la120.chars.txt \
+             src/la100.chars.txt
 SRC_FONTS  = \
-	src/la120.font.txt \
-	src/la120-10cpi.font.txt \
-	src/la120-16point5cpi.font.txt
+             src/la120.font.txt \
+             src/la120-10cpi.font.txt \
+             src/la120-16point5cpi.font.txt \
+             src/la100.font.txt \
+             src/la100-10cpi.font.txt \
+             src/la100-16point5cpi.font.txt
 BDFS       = $(patsubst src/%.font.txt,bdf/%.bdf,$(SRC_FONTS))
 TTFS       = $(patsubst src/%.font.txt,ttf/%.ttf,$(SRC_FONTS))
 
