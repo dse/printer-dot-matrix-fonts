@@ -269,9 +269,9 @@ STARTCHAR U+003A COLON
 ENDCHAR
 STARTCHAR U+003B SEMICOLON
 |          |
+|   # #    |
+|   # #    |
 |          |
-|   # #    |
-|   # #    |
 |          |
 |   # #    |
 +   # #    +
