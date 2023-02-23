@@ -1,0 +1,149 @@
+@font-face { src: url("ttf/la100.ttf"); font-family: "DEC LA100"; font-weight: normal; font-style: normal; }
+@font-face { src: url("ttf/la120.ttf"); font-family: "DEC LA120"; font-weight: normal; font-style: normal; }
+@font-face { src: url("ttf/la100-10cpi.ttf"); font-family: "DEC LA100 10CPI"; font-weight: normal; font-style: normal; }
+@font-face { src: url("ttf/la120-10cpi.ttf"); font-family: "DEC LA120 10CPI"; font-weight: normal; font-style: normal; }
+@font-face { src: url("ttf/la100-16point5cpi.ttf"); font-family: "DEC LA100 16.5CPI"; font-weight: normal; font-style: normal; }
+@font-face { src: url("ttf/la120-16point5cpi.ttf"); font-family: "DEC LA120 16.5CPI"; font-weight: normal; font-style: normal; }
+.LA100 { font-family: "DEC LA100"; }
+.LA120 { font-family: "DEC LA120"; }
+.LA100-10CPI { font-family: "DEC LA100 10CPI"; }
+.LA120-10CPI { font-family: "DEC LA120 10CPI"; }
+.LA100-16POINT5CPI { font-family: "DEC LA100 16.5CPI"; }
+.LA120-16POINT5CPI { font-family: "DEC LA120 16.5CPI"; }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --blue: #0000ff;
+    --green: #33cc33;
+    --black: black;
+    --inch: 144px;
+    --graybar-1: #ded;
+    --graybar-2: #efe;
+    --perforate: #eee;
+    --text-width:           calc(8    * var(--inch));
+    --graybar-width:        calc(8.25 * var(--inch));
+    --paper-width:          calc(8.5  * var(--inch));
+    --full-width:           calc(9.5  * var(--inch));
+    --perforation-width:    calc(0.5  * var(--inch));
+    --perforation-position: calc(4.5  * var(--inch));
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #ccc;
+}
+body {
+    padding-top: 1em;
+    font-family: "DEC LA100";
+    font-size: 24px;
+    color: #555;
+    line-height: 1;
+}
+*, *::before, *::after {
+    line-height: inherit;
+}
+.graybar {
+    background-color: white;
+    padding-bottom: 72px;
+    padding-top: 48px;
+}
+.container {
+    margin-left: 1ch;
+    margin-right: 1ch;
+}
+@media (min-width: 1400px) {
+    .graybar {
+        margin-left: auto;
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+        margin-right: auto;
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+pre {
+    font-family: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+h1 { color: var(--blue); }
+h2 { color: var(--green); }
+h3 { color: var(--black); }
+h1::before { content: '# '; }
+h2::before { content: '## '; }
+h3::before { content: '### '; }
+h4::before { content: '#### '; }
+p, ul, ol, dl, pre, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+ul > li {
+    padding-left: 4ch;
+    position: relative;
+}
+ul > li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'o';
+}
+.graybar {
+    background-image:
+        /* graybars */ repeating-linear-gradient(to bottom,
+                                                 var(--graybar-1) 0px,
+                                                 var(--graybar-1) 1px,
+                                                 var(--graybar-2) 1px,
+                                                 var(--graybar-2) 72px,
+                                                 var(--graybar-1) 72px,
+                                                 var(--graybar-1) 73px,
+                                                 white 73px,
+                                                 white 144px);
+}
+@media (min-width: 1400px) {
+    .graybar {
+        width: var(--full-width);
+    }
+    .container {
+        width: var(--text-width);
+    }
+    .graybar {
+        background-image:
+            /* holes */ radial-gradient(circle at center, #ccc 0, #ccc calc(var(--inch) / 12), transparent calc(var(--inch) / 12)),
+            /* holes */ radial-gradient(circle at center, #ccc 0, #ccc calc(var(--inch) / 12), transparent calc(var(--inch) / 12)),
+            /* perforation */ repeating-linear-gradient(to bottom, var(--perforate) 0%, var(--perforate) 50%, transparent 50%, transparent 100%),
+            /* perforation */ repeating-linear-gradient(to bottom, var(--perforate) 0%, var(--perforate) 50%, transparent 50%, transparent 100%),
+            /* graybar left border */ repeating-linear-gradient(to right, var(--graybar-1) 0%, var(--graybar-1) 100%),
+            /* graybar right border */ repeating-linear-gradient(to right, var(--graybar-1) 0%, var(--graybar-1) 100%),
+            /* graybars */ repeating-linear-gradient(to bottom,
+                                                     var(--graybar-1) 0px,
+                                                     var(--graybar-1) 1px,
+                                                     var(--graybar-2) 1px,
+                                                     var(--graybar-2) 72px,
+                                                     var(--graybar-1) 72px,
+                                                     var(--graybar-1) 73px,
+                                                     white 73px,
+                                                     white 144px);
+        background-size:     calc(0.5 * var(--inch)) calc(0.5 * var(--inch)),
+                             calc(0.5 * var(--inch)) calc(0.5 * var(--inch)),
+                             1px 4px, 1px 4px, 1px auto, 1px auto, var(--graybar-width) auto;
+        background-repeat:   repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y;
+        background-position: calc(50% - calc(1 * var(--perforation-position))) top,
+                             calc(50% + calc(1 * var(--perforation-position))) top,
+                             calc(50% - calc(0.5 * var(--paper-width))) top,
+                             calc(50% + calc(0.5 * var(--paper-width))) top,
+                             calc(50% - calc(0.5 * var(--graybar-width))) top,
+                             calc(50% + calc(0.5 * var(--graybar-width))) top,
+                             top center;
+    }
+}
