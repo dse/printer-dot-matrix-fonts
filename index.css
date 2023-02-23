@@ -11,9 +11,18 @@
 .LA100-16POINT5CPI { font-family: "DEC LA100 16.5CPI"; }
 .LA120-16POINT5CPI { font-family: "DEC LA120 16.5CPI"; }
 
+/* barebones reset */
 *, *::before, *::after {
     box-sizing: border-box;
 }
+*, *::before, *::after {
+    line-height: inherit;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --blue: #0000ff;
     --green: #33cc33;
@@ -30,8 +39,6 @@
     --perforation-position: calc(4.5  * var(--inch));
 }
 html, body {
-    margin: 0;
-    padding: 0;
     background-color: #ccc;
 }
 body {
@@ -40,9 +47,6 @@ body {
     font-size: 24px;
     color: #555;
     line-height: 1;
-}
-*, *::before, *::after {
-    line-height: inherit;
 }
 .graybar {
     background-color: white;
@@ -79,6 +83,8 @@ h1::before { content: '# '; }
 h2::before { content: '## '; }
 h3::before { content: '### '; }
 h4::before { content: '#### '; }
+h5::before { content: '##### '; }
+h6::before { content: '###### '; }
 p, ul, ol, dl, pre, h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 1em;
