@@ -953,4 +953,3 @@ STARTCHAR U+007E TILDE
 +          |
 |          |
 ENDCHAR
-
