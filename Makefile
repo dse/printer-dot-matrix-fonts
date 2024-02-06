@@ -13,7 +13,8 @@ BDFS       = $(patsubst src/%.font.txt,dist/bdf/%.bdf,$(SRC_FONTS))
 TTFS       = $(patsubst src/%.font.txt,dist/ttf/%.ttf,$(SRC_FONTS))
 WEB_TTFS   = $(patsubst src/%.font.txt,web/ttf/%.ttf,$(SRC_FONTS))
 
-BDFBDF                 = ~/git/dse.d/perl-font-bitmap/bin/bdfbdf
+# BDFBDF                 = ~/git/dse.d/perl-font-bitmap/bin/bdfbdf
+BDFBDF                 = ~/git/dse.d/perl-font-bdf/bin/bdf2bdf
 BDFBDF_OPTIONS         =
 BITMAPFONT2TTF         = bitmapfont2ttf
 BITMAPFONT2TTF_OPTIONS = --dot-width 1 --dot-height 1 --circular-dots
